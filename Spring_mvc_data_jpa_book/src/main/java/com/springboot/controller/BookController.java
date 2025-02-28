@@ -24,8 +24,8 @@ public class BookController
 	public Book getAllBook( Book b2)
 	{
 		
-		b2.setBookNameString("suiuhgv");
-		b2.setBookAuthorString("fgh");
+		b2.setBookNameString("A half baked love Story");
+		b2.setBookAuthorString("Anurag Garg");
 		b2.setBookPriceDouble(345.00);
 		Book save = bookRepo.save(b2);
 		return save; 
