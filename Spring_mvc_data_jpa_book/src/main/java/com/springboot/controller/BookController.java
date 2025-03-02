@@ -1,6 +1,9 @@
 package com.springboot.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,7 +31,14 @@ public class BookController
 		b2.setBookAuthorString("Anurag Garg");
 		b2.setBookPriceDouble(345.00);
 		Book save = bookRepo.save(b2);
+		
 		return save; 
+	}
+	@GetMapping("/allbooks")
+	public void listAllBook()
+	{
+		List<Book> list = bookRepo.findAll();
+		list.forEach(s->System.out.println(s));
 	}
 	
 }
